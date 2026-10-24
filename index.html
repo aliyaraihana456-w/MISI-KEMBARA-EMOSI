@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6b4ce6">
+<title>Dunia Bandingan Semacam | Kembara Misi Emosi</title>
+<style>
+:root{--purple:#6b4ce6;--pink:#ff6fae;--yellow:#ffd45c;--blue:#55bdf4;--green:#67cb78;--red:#ff6a68;--ink:#30275b;--cream:#fffaf1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Trebuchet MS","Arial Rounded MT Bold",system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf8ff 0%,#fff4fb 55%,#fff9e9 100%)}
+header{padding:24px 18px 30px;text-align:center;background:radial-gradient(circle at 12% 15%,#fff 0 4px,transparent 5px),linear-gradient(135deg,#8ad8ff,#c8b7ff 55%,#ffcfeb);border-radius:0 0 34px 34px;position:relative;overflow:hidden}
+header:after{content:"🌈 ✨ ☁️ ⭐ ☁️ ✨ 🌈";display:block;font-size:clamp(18px,4vw,34px);margin-top:10px;letter-spacing:6px}
+.kicker{display:inline-block;background:#fff9;border:2px solid #fff;border-radius:999px;padding:7px 14px;font-weight:800}
+h1{font-size:clamp(2rem,6vw,4.5rem);line-height:1.03;margin:16px auto 8px;color:#fff;text-shadow:0 4px 0 #5436b6,0 7px 16px #5540a866;max-width:950px}
+header p{font-size:clamp(1rem,2.5vw,1.25rem);font-weight:800;margin:10px auto 18px}
+.btn{border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:900;cursor:pointer;color:#fff;background:var(--purple);box-shadow:0 5px 0 #4630a8;transition:transform .15s,filter .15s;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #4630a8}
+.btn.yellow{background:#ffb92e;box-shadow:0 5px 0 #c27c11;color:#50320a}.btn.blue{background:#35a8ee;box-shadow:0 5px 0 #1877b5}.btn.red{background:#ff5e5e;box-shadow:0 5px 0 #b92f43}.btn.green{background:#45bd69;box-shadow:0 5px 0 #20864a}
+main{max-width:1120px;margin:auto;padding:22px 16px 60px}.section{margin:22px 0 34px}.section-title{text-align:center;font-size:clamp(1.6rem,4vw,2.5rem);margin:0 0 8px}.sub{text-align:center;margin:0 auto 20px;max-width:720px;line-height:1.6}
+.panel{background:#ffffffdc;border:3px solid white;border-radius:26px;padding:clamp(14px,3vw,26px);box-shadow:0 12px 30px #6751a51a}
+.map-stage{position:relative;width:100%;isolation:isolate}
+.map-img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 8px 24px #38266b20}
+.map-hotspot{position:absolute;z-index:2;display:flex;align-items:center;justify-content:center;gap:5px;border:2px solid #fff;border-radius:999px;padding:clamp(5px,.8vw,10px) clamp(7px,1.2vw,14px);font:900 clamp(10px,1.1vw,15px)/1.15 "Trebuchet MS",sans-serif;color:#fff;box-shadow:0 4px 0 #34265c66,0 6px 16px #1d164744;cursor:pointer;transform:translate(-50%,-50%);max-width:23%;white-space:normal;text-align:center;transition:filter .15s,transform .15s}
+.map-hotspot span{display:inline}
+.map-hotspot b{font-size:1.05em}
+.map-hotspot:hover{filter:brightness(1.12);transform:translate(-50%,-53%) scale(1.04)}
+.map-hotspot:focus-visible{outline:3px solid #211744;outline-offset:3px}
+.hs-joy{left:47%;top:25%;background:#f7ad19}
+.hs-sad{left:77%;top:32%;background:#169be4}
+.hs-anger{left:48%;top:55%;background:#ee4d52}
+.hs-disgust{left:59%;top:82%;background:#39a951}
+.hs-memory{left:86%;top:72%;background:#7752d8}
+@media(max-width:600px){.map-hotspot{max-width:30%;font-size:9px;padding:5px 6px;gap:2px;border-width:1px}.map-hotspot span{display:inline}.map-hotspot b{font-size:9px}.hs-joy{left:46%;top:26%}.hs-sad{left:77%;top:32%}.hs-anger{left:48%;top:56%}.hs-disgust{left:59%;top:82%}.hs-memory{left:85%;top:72%}}
+.station-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+.station{border:3px solid white;border-radius:20px;padding:16px 12px;text-align:center;box-shadow:0 7px 16px #39246b12;min-width:0}
+.station .emoji{font-size:2.2rem}.station h3{margin:7px 0;font-size:1.12rem}.station p{font-size:.92rem;line-height:1.45;min-height:42px}.station button{width:100%;font-size:.9rem;padding:10px 8px}
+.joy{background:#fff1b9}.sad{background:#dff3ff}.anger{background:#ffe0d8}.disgust{background:#e4f8d9}
+.progress-wrap{height:15px;background:#eee7ff;border-radius:99px;overflow:hidden;margin:12px 0}.progress{height:100%;width:0;background:linear-gradient(90deg,#ffca49,#ff78ad,#7c68ff);transition:width .3s}
+.stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.pill{background:white;border-radius:999px;padding:10px 16px;font-weight:900;box-shadow:0 4px 12px #32205c12}
+.activity{display:none;margin-top:18px}.activity.active{display:block}.question{font-size:1.25rem;font-weight:900;line-height:1.4}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.answer{border:2px solid #ded4ff;background:#fff;border-radius:16px;padding:14px;font:inherit;font-weight:800;cursor:pointer;color:var(--ink)}.answer:hover{background:#f3efff}.answer:focus-visible,.btn:focus-visible{outline:3px solid #222;outline-offset:3px}
+.feedback{font-weight:900;min-height:28px}.note-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.note{background:#fff;border-radius:18px;padding:16px;text-align:center;border:2px solid #f1e8ff}.note strong{display:block;font-size:1.08rem;margin:6px 0}.note span{font-size:2rem}
+footer{text-align:center;padding:25px;color:#655b83;font-size:.92rem}
+.modal{display:none;position:fixed;inset:0;background:#21163dcc;z-index:20;align-items:center;justify-content:center;padding:16px}.modal.open{display:flex}.modal-card{width:min(680px,100%);max-height:90vh;overflow:auto;background:#fffafc;border-radius:24px;padding:22px;box-shadow:0 20px 80px #0004}.modal-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.close{border:0;border-radius:50%;width:42px;height:42px;font-size:1.3rem;cursor:pointer}.certificate{background:linear-gradient(135deg,#fff8d9,#f7e9ff);border:7px double #8d70db;text-align:center;padding:26px;border-radius:16px}.certificate h2{font-size:2rem;color:#6845bd}.camera-preview{width:100%;max-height:320px;background:#251d43;border-radius:14px;object-fit:contain}.small{font-size:.9rem;color:#645a7c}
+@media(max-width:760px){.station-grid,.note-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.station p{min-height:0}}
+@media(max-width:420px){.station-grid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.station button{max-width:260px}.pill{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <span class="kicker">📚 Bahasa Melayu Tahun 3 • Misi Pembelajaran</span>
+  <h1>DUNIA BANDINGAN SEMACAM</h1>
+  <p>✨ Kembara Misi Emosi ✨</p>
+  <a class="btn yellow" href="#peta">🚀 MULA KEMBARA SEKARANG!</a>
+</header>
+<main>
+  <section class="section" id="peta">
+    <h2 class="section-title">🗺️ Peta Kembara Emosi</h2>
+    <p class="sub">Ikuti laluan misi mengikut urutan. Selesaikan aktiviti di setiap stesen untuk mengumpul bintang!</p>
+    <div class="panel">
+      <div class="map-stage" aria-label="Peta interaktif kembara emosi">
+        <img class="map-img" src="assets/peta-kembara.png" alt="Peta pengembaraan zig zag. Tekan butang pada setiap stesen untuk membuka aktiviti." onerror="this.style.display='none';document.getElementById('mapFallback').hidden=false">
+        <button class="map-hotspot hs-joy" onclick="startStation(0)" aria-label="Buka aktiviti Stesen Gembira">☀️ <span>Stesen Gembira</span><b>▶</b></button>
+        <button class="map-hotspot hs-sad" onclick="startStation(1)" aria-label="Buka aktiviti Stesen Sedih">💧 <span>Stesen Sedih</span><b>▶</b></button>
+        <button class="map-hotspot hs-anger" onclick="startStation(2)" aria-label="Buka aktiviti Stesen Marah">🔥 <span>Stesen Marah</span><b>▶</b></button>
+        <button class="map-hotspot hs-disgust" onclick="startStation(3)" aria-label="Buka aktiviti Stesen Loya">🌿 <span>Stesen Loya</span><b>▶</b></button>
+        <button class="map-hotspot hs-memory" onclick="openCertificate()" aria-label="Buka Pusat Memori dan sijil">🏰 <span>Pusat Memori</span><b>▶</b></button>
+      </div>
+      <div id="mapFallback" hidden class="panel">🌈 Laluan misi: Gembira ➜ Sedih ➜ Marah ➜ Loya ➜ Pusat Memori</div>
+      <p class="small" style="text-align:center;margin:10px 0 0">Tip: tekan label berwarna pada peta untuk membuka setiap misi. Butang aktiviti juga tersedia di bawah peta.</p>
+      <div class="station-grid">
+        <article class="station joy"><div class="emoji">☀️</div><h3>1. Stesen Gembira</h3><p>Kenali perbandingan semacam yang ceria!</p><button class="btn yellow" onclick="startStation(0)">Mula Misi ▶</button></article>
+        <article class="station sad"><div class="emoji">💧</div><h3>2. Stesen Sedih</h3><p>Padankan ungkapan dengan maksudnya.</p><button class="btn blue" onclick="startStation(1)">Mula Misi ▶</button></article>
+        <article class="station anger"><div class="emoji">🔥</div><h3>3. Stesen Marah</h3><p>Pilih perbandingan semacam yang tepat.</p><button class="btn red" onclick="startStation(2)">Mula Misi ▶</button></article>
+        <article class="station disgust"><div class="emoji">🌿</div><h3>4. Stesen Loya</h3><p>Uji kefahaman sebelum ke Pusat Memori.</p><button class="btn green" onclick="startStation(3)">Mula Misi ▶</button></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2 class="section-title">📖 Jom Kenali Bandingan Semacam</h2>
+    <p class="sub">Bandingan semacam membandingkan sesuatu dengan perkara lain, biasanya menggunakan perkataan seperti, bagai, umpama atau bak.</p>
+    <div class="note-grid">
+      <div class="note"><span>🍯</span><strong>Manis umpama madu</strong><small>Rasa yang manis</small></div>
+      <div class="note"><span>🦁</span><strong>Berani seperti singa</strong><small>Sangat berani</small></div>
+      <div class="note"><span>☁️</span><strong>Putih seperti kapas</strong><small>Warna putih</small></div>
+      <div class="note"><span>🌊</span><strong>Luas bak lautan</strong><small>Sangat luas</small></div>
+    </div>
+  </section>
+  <section class="section panel" id="kemajuan">
+    <h2 class="section-title">⭐ Kemajuan Misi</h2>
+    <div class="stats"><span class="pill">⭐ Bintang: <b id="stars">0</b></span><span class="pill">🏁 Stesen selesai: <b id="done">0</b>/4</span></div>
+    <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+    <p class="sub" id="progressText">Mulakan misi pertama untuk mengumpul bintang!</p>
+    <div style="text-align:center;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn" onclick="openCertificate()">🏅 Lihat Sijil</button><button class="btn green" onclick="openCamera()">📸 Swafoto Misi</button></div>
+  </section>
+</main>
+<footer>🌈 Dunia Bandingan Semacam • Belajar sambil bermain! ✨</footer>
+
+<div class="modal" id="activityModal" role="dialog" aria-modal="true" aria-labelledby="activityTitle">
+ <div class="modal-card">
+  <div class="modal-head"><h2 id="activityTitle">Misi Emosi</h2><button class="close" onclick="closeModal('activityModal')" aria-label="Tutup">✕</button></div>
+  <p id="stationIntro"></p><div class="progress-wrap"><div class="progress" id="questionProgress"></div></div>
+  <div id="questionArea"></div><p class="feedback" id="feedback" aria-live="polite"></p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="nextBtn" onclick="nextQuestion()" hidden>Soalan Seterusnya ➜</button><button class="btn green" id="finishBtn" onclick="finishStation()" hidden>Selesaikan Misi ✓</button></div>
+ </div>
+</div>
+<div class="modal" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="certificateTitle">
+ <div class="modal-card"><div class="modal-head"><h2 id="certificateTitle">🏅 Sijil Pengembara Emosi</h2><button class="close" onclick="closeModal('certificateModal')">✕</button></div>
+  <div class="certificate"><div style="font-size:3rem">🌈🏆⭐</div><h2>SIJIL TAMAT MISI</h2><p>Dengan ini diperakui bahawa</p><input id="studentName" placeholder="Tulis nama murid di sini" style="font:inherit;padding:10px;border:2px solid #d7c8ff;border-radius:10px;max-width:100%;text-align:center"><p>telah menyertai Kembara Misi Emosi: Bandingan Semacam.</p><p>Jumlah bintang: <b id="certStars">0</b> ⭐</p><p id="certStatus">Teruskan usaha untuk melengkapkan semua stesen!</p></div>
+  <p class="small">Petua: gunakan fungsi cetak pelayar untuk menyimpan sijil sebagai PDF.</p><button class="btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+ </div>
+</div>
+<div class="modal" id="cameraModal" role="dialog" aria-modal="true" aria-labelledby="cameraTitle">
+ <div class="modal-card"><div class="modal-head"><h2 id="cameraTitle">📸 Swafoto Misi</h2><button class="close" onclick="stopCamera();closeModal('cameraModal')">✕</button></div>
+  <p class="small">Kebenaran kamera diperlukan. Jika kamera tidak tersedia, gunakan muat naik gambar.</p><video id="video" class="camera-preview" autoplay playsinline hidden></video><canvas id="canvas" class="camera-preview" hidden></canvas>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn" onclick="startCamera()">Buka Kamera</button><button class="btn blue" onclick="takePhoto()">Ambil Gambar</button><label class="btn yellow">Pilih Gambar<input id="photoUpload" type="file" accept="image/*" hidden onchange="loadPhoto(event)"></label><a class="btn green" id="downloadPhoto" download="swafoto-misi.png" hidden>Muat Turun</a></div>
+  <p class="feedback" id="cameraFeedback" aria-live="polite"></p>
+ </div>
+</div>
+<script>
+const stations = [
+ {name:"Stesen Gembira",intro:"Padankan ungkapan dengan perbandingan yang sesuai.",questions:[
+  {q:"Manis umpama ____.",opts:["madu","batu","kapas","kilat"],a:"madu",why:"Betul! Madu mempunyai rasa manis."},
+  {q:"Pantas seperti ____.",opts:["awan","kilat","batu","daun"],a:"kilat",why:"Tepat! Kilat berlaku dengan sangat pantas."},
+  {q:"Tinggi bagai ____.",opts:["galah","madu","kapas","lautan"],a:"galah",why:"Bagus! Galah dikaitkan dengan sesuatu yang tinggi."}]},
+ {name:"Stesen Sedih",intro:"Pilih maksud yang paling sesuai.",questions:[
+  {q:"“Putih seperti kapas” bermaksud…",opts:["sangat putih","sangat bising","sangat kecil","sangat panas"],a:"sangat putih",why:"Betul! Kapas biasanya berwarna putih."},
+  {q:"“Berat macam batu” bermaksud…",opts:["sangat ringan","sangat berat","sangat pantas","sangat lembut"],a:"sangat berat",why:"Tepat! Batu dikaitkan dengan berat."},
+  {q:"Perkataan manakah menunjukkan bandingan?",opts:["kerana","seperti","tetapi","kemudian"],a:"seperti",why:"Bagus! “Seperti” ialah kata pembanding."}]},
+ {name:"Stesen Marah",intro:"Pilih jawapan yang melengkapkan bandingan semacam.",questions:[
+  {q:"Berani seperti ____.",opts:["singa","kapas","madu","awan"],a:"singa",why:"Betul! Singa sering dikaitkan dengan keberanian."},
+  {q:"Luas bak ____.",opts:["batu","lautan","kilat","galah"],a:"lautan",why:"Tepat! Lautan sangat luas."},
+  {q:"“Sejuk seperti ais” membandingkan suhu yang…",opts:["panas","sejuk","tinggi","manis"],a:"sejuk",why:"Bagus! Ais mempunyai suhu yang sejuk."}]},
+ {name:"Stesen Loya",intro:"Selesaikan cabaran terakhir sebelum ke Pusat Memori.",questions:[
+  {q:"Pilih bandingan semacam yang betul.",opts:["putih seperti kapas","putih kerana kapas","putih tetapi kapas","putih kemudian kapas"],a:"putih seperti kapas",why:"Betul! Ungkapan ini menggunakan kata pembanding."},
+  {q:"“Laju macam ____.”",opts:["siput","kilat","batu","madu"],a:"kilat",why:"Tepat! Kilat melambangkan kelajuan."},
+  {q:"Apakah tujuan bandingan semacam?",opts:["Membandingkan sesuatu dengan perkara lain","Menamakan tempat","Mengira nombor","Menunjukkan arah sahaja"],a:"Membandingkan sesuatu dengan perkara lain",why:"Hebat! Awak hampir tiba di Pusat Memori."}]}
+];
+let stationIndex=0, questionIndex=0, score=0, stars=0, completed=new Set(), stream=null, currentPhotoUrl=null;
+function startStation(i){stationIndex=i;questionIndex=0;document.getElementById("activityTitle").textContent=stations[i].name;document.getElementById("stationIntro").textContent=stations[i].intro;document.getElementById("feedback").textContent="";document.getElementById("nextBtn").hidden=true;document.getElementById("finishBtn").hidden=true;renderQuestion();openModal("activityModal")}
+function renderQuestion(){const item=stations[stationIndex].questions[questionIndex];document.getElementById("questionProgress").style.width=(questionIndex/stations[stationIndex].questions.length*100)+"%";document.getElementById("questionArea").innerHTML='<p class="question">'+item.q+'</p><div class="answers">'+item.opts.map(o=>'<button class="answer" data-answer="'+escapeHtml(o)+'">'+escapeHtml(o)+'</button>').join("")+'</div>';document.querySelectorAll(".answer").forEach(b=>b.addEventListener("click",()=>answer(b.dataset.answer)));document.getElementById("feedback").textContent="";document.getElementById("nextBtn").hidden=true;document.getElementById("finishBtn").hidden=true}
+function answer(value){const item=stations[stationIndex].questions[questionIndex];const buttons=document.querySelectorAll(".answer");buttons.forEach(b=>b.disabled=true);if(value===item.a){score++;stars++;document.getElementById("feedback").textContent="⭐ "+item.why}else{document.getElementById("feedback").textContent="Belum tepat. Jawapan yang betul ialah: "+item.a+"."}updateStats();if(questionIndex<stations[stationIndex].questions.length-1)document.getElementById("nextBtn").hidden=false;else document.getElementById("finishBtn").hidden=false}
+function nextQuestion(){questionIndex++;renderQuestion()}
+function finishStation(){completed.add(stationIndex);updateStats();closeModal("activityModal");if(stationIndex<3){document.getElementById("progressText").textContent="Syabas! Teruskan ke "+stations[stationIndex+1].name+"."}else{document.getElementById("progressText").textContent="Tahniah! Semua stesen selesai. Selamat tiba di Pusat Memori!";openCertificate()}}
+function updateStats(){document.getElementById("stars").textContent=stars;document.getElementById("done").textContent=completed.size;document.getElementById("progress").style.width=(completed.size/4*100)+"%";document.getElementById("certStars").textContent=stars;document.getElementById("certStatus").textContent=completed.size===4?"Tahniah! Semua misi berjaya diselesaikan!":"Misi selesai: "+completed.size+" daripada 4 stesen."}
+function openModal(id){document.getElementById(id).classList.add("open")}function closeModal(id){document.getElementById(id).classList.remove("open")}
+function openCertificate(){updateStats();openModal("certificateModal")}
+function openCamera(){openModal("cameraModal")}
+async function startCamera(){try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user"},audio:false});const v=document.getElementById("video");v.srcObject=stream;v.hidden=false;document.getElementById("canvas").hidden=true;document.getElementById("cameraFeedback").textContent="Kamera sedia. Tekan Ambil Gambar."; }catch(e){document.getElementById("cameraFeedback").textContent="Kamera tidak dapat dibuka. Cuba pilih gambar daripada peranti."}}
+function takePhoto(){const v=document.getElementById("video"),c=document.getElementById("canvas");if(!stream||!v.videoWidth){document.getElementById("cameraFeedback").textContent="Buka kamera dahulu atau pilih gambar.";return}c.width=v.videoWidth;c.height=v.videoHeight;c.getContext("2d").drawImage(v,0,0);c.hidden=false;setDownload(c.toDataURL("image/png"));document.getElementById("cameraFeedback").textContent="Swafoto berjaya diambil!"}
+function loadPhoto(e){const file=e.target.files[0];if(!file)return;const url=URL.createObjectURL(file);const c=document.getElementById("canvas"),ctx=c.getContext("2d"),img=new Image();img.onload=()=>{c.width=img.width;c.height=img.height;ctx.drawImage(img,0,0);c.hidden=false;document.getElementById("video").hidden=true;setDownload(c.toDataURL("image/png"));document.getElementById("cameraFeedback").textContent="Gambar sedia untuk dimuat turun."};img.src=url}
+function setDownload(url){const a=document.getElementById("downloadPhoto");a.href=url;a.hidden=false}
+function stopCamera(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}document.getElementById("video").srcObject=null}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m){if(m.id==="cameraModal")stopCamera();m.classList.remove("open")}}));
+</script>
+</body>
+</html>
